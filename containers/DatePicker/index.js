@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { DatePickerIOS, View, StyleSheet, Button } from 'react-native';
+import { DatePickerIOS, View, Button } from 'react-native';
 import moment from 'moment';
+import s from '../styles';
 
 export default class DatePicker extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ export default class DatePicker extends Component {
     const { onSelectData } = this.props;
     const date = moment(this.state.selectedDate).format('YYYY-MM-DD');
     return (
-      <View style={styles.container}>
+      <View style={s.datePicker}>
         <Button
           title="Apply Date"
           color="#841584"
@@ -42,10 +43,3 @@ export default class DatePicker extends Component {
 DatePicker.propTypes = {
     onSelectData: PropTypes.func,
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center'
-  },
-})

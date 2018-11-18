@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import { StyleSheet, View } from 'react-native'
+import { Text, ScrollView } from 'react-native'
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 import DatePicker from './DatePicker';
 import ContentView from './ContentView';
 import { selectDate, selectExplanation, selectUrl, selectTitle } from './selectors';
 import { selectData } from './actions';
+import s from './styles';
 
 class MainView extends Component {
 
@@ -17,10 +18,11 @@ componentDidMount() {
     const { date, url, explanation, title, onSelectData } = this.props;
 
     return (
-      <View style={styles.container}>
-        <ContentView date={date} url={url} explanation={explanation} title={title} />
-        <DatePicker onSelectData={onSelectData} />
-      </View>
+    <ScrollView style={s.wrapper}>
+      <Text style={s.title}>Astronomic Picture of the Day</Text>
+      <ContentView date={date} url={url} explanation={explanation} title={title} />
+      <DatePicker onSelectData={onSelectData} />
+    </ScrollView>
     )
   }
 }
@@ -35,12 +37,5 @@ const mapStateToProps = createStructuredSelector({
 const mapDispatchToProps = {
     onSelectData: selectData,
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 2,
-    justifyContent: 'center'
-  },
-});
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainView);
