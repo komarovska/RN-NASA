@@ -10,10 +10,10 @@ class ContentView extends Component {
       return (
         <View style={styles.container}>
           <Image
-            style={{width: 50, height: 50}}
+            style={{width: 50, height: 50}}''
             source={{uri: img}}/>
            <Text>{explanation}</Text>
-           <Text>{name}</Text>
+           <Text>{name}</Text>  
            <Text>{date.toString()}</Text>
         </View>
       );
