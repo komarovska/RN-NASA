@@ -4,22 +4,22 @@ import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 import DatePicker from './DatePicker';
 import ContentView from './ContentView';
-import { selectDate, selectExplanation, selectImg, selectTitle } from './selectors';
+import { selectDate, selectExplanation, selectUrl, selectTitle } from './selectors';
 import { selectData } from './actions';
 
 class MainView extends Component {
 
 componentDidMount() {
-    const { onSelectData, selectedDate } = this.props;
-      onSelectData(selectedDate);
+    const { onSelectData, date } = this.props;
+      onSelectData(date);
     }
   render() {
-    const { date, img, explanation, name } = this.props;
+    const { date, url, explanation, title, onSelectData } = this.props;
 
     return (
       <View style={styles.container}>
-        <DatePicker />
-        <ContentView date={date} img={img} explanation={explanation} name={name} />
+        <ContentView date={date} url={url} explanation={explanation} title={title} />
+        <DatePicker onSelectData={onSelectData} />
       </View>
     )
   }
@@ -28,7 +28,7 @@ componentDidMount() {
 const mapStateToProps = createStructuredSelector({
     date: selectDate,
     explanation: selectExplanation,
-    img: selectImg,
+    url: selectUrl,
     title: selectTitle,
 });
   
@@ -38,7 +38,7 @@ const mapDispatchToProps = {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 2,
     justifyContent: 'center'
   },
 });

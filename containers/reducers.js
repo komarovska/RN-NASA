@@ -2,7 +2,7 @@ import moment from 'moment';
 import { FETCH_DATA } from '../constants';
 
 const initialState = {
-  date: moment(),
+  date: moment().format('YYYY-MM-DD'),
   title: '',
   img: '',
   explanation: '',
@@ -17,7 +17,7 @@ const mainReducer = (state = initialState, action) => {
         return {
           date: moment(date, 'YYYY-MM-DD'),
           title: title,
-          img: url,
+          url: url,
           explanation: explanation,
           isReceived: true,
         };

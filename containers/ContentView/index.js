@@ -5,15 +5,14 @@ import { StyleSheet, View, Text, Image } from 'react-native';
 class ContentView extends Component {
 
    render() {
-      const { date, img, explanation, name } = this.props;
-  
+      const { date, url, explanation, title } = this.props;
       return (
         <View style={styles.container}>
+          <Text>{title}</Text> 
           <Image
-            style={{width: 50, height: 50}}''
-            source={{uri: img}}/>
-           <Text>{explanation}</Text>
-           <Text>{name}</Text>  
+            style={{width: 200, height: 200}}
+            source={{uri: url}}/>
+           <Text>{explanation}</Text> 
            <Text>{date.toString()}</Text>
         </View>
       );
@@ -21,29 +20,19 @@ class ContentView extends Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#F5FCFF',
-    },
-    welcome: {
-      fontSize: 20,
-      textAlign: 'center',
-      margin: 10,
-    },
-    instructions: {
-      textAlign: 'center',
-      color: '#333333',
-      marginBottom: 5,
-    },
-  });
+  container: {
+    flex: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+});
   
 ContentView.propTypes = {
-    date: PropTypes.number,
-    explanation: PropTypes.string,
-    img: PropTypes.string,
-    onSelectData: PropTypes.func,
+  date: PropTypes.object,
+  explanation: PropTypes.string,
+  img: PropTypes.string,
+  onSelectData: PropTypes.func,
 };
 
 export default ContentView;
