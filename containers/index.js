@@ -26,10 +26,10 @@ componentDidMount() {
 }
 
 const mapStateToProps = createStructuredSelector({
-    date: selectDate(),
-    explanation: selectExplanation(),
-    img: selectImg(),
-    title: selectTitle(),
+    date: selectDate,
+    explanation: selectExplanation,
+    img: selectImg,
+    title: selectTitle,
 });
   
 const mapDispatchToProps = {

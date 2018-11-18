@@ -12,9 +12,9 @@ class ContentView extends Component {
           <Image
             style={{width: 50, height: 50}}
             source={{uri: img}}/>
-           <Text>{{explanation}}</Text>
-           <Text>{{name}}</Text>
-           <Text>{{date}}</Text>
+           <Text>{explanation}</Text>
+           <Text>{name}</Text>
+           <Text>{date.toString()}</Text>
         </View>
       );
     }
