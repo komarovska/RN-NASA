@@ -5,19 +5,20 @@ import s from '../styles';
 
 class ContentView extends Component {
 
-   render() {
-      const { date, url, explanation, title } = this.props;
-      return (
-        <View style={s.container}>
-          <Text style={s.smallTitle}>{title}</Text> 
-          <Image
-            style={{width: 300, height: 300}}
-            source={{uri: url}}/>
-           <Text style={s.explanation}>{explanation}</Text> 
-           <Text>{date.toString()}</Text>
-        </View>
-      );
-    }
+  render() {
+    const { date, url, explanation, title } = this.props;
+    return (
+      <View style={s.container}>
+        <Text style={s.smallTitle}>{title}</Text> 
+        <Image
+          style={{width: 300, height: 300}}
+          source={{uri: url}}
+        />
+        <Text style={s.explanation}>{explanation}</Text> 
+        <Text>{date.toString()}</Text>
+      </View>
+    );
+  }
 }
   
 ContentView.propTypes = {

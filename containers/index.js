@@ -12,9 +12,9 @@ import s from './styles';
 class MainView extends Component {
 
 componentDidMount() {
-    const { onSelectData, date } = this.props;
-      onSelectData(date);
-    }
+  const { onSelectData, date } = this.props;
+    onSelectData(date);
+  }
   render() {
     const { date, url, explanation, title, onSelectData } = this.props;
 
