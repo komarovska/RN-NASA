@@ -24,7 +24,7 @@ ContentView.propTypes = {
   date: PropTypes.object,
   explanation: PropTypes.string,
   img: PropTypes.string,
-  onSelectData: PropTypes.func,
+  title: PropTypes.string,
 };
 
 export default ContentView;

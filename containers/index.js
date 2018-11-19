@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Text, ScrollView } from 'react-native'
+import PropTypes from 'prop-types';
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 import DatePicker from './DatePicker';
@@ -36,6 +37,14 @@ const mapStateToProps = createStructuredSelector({
   
 const mapDispatchToProps = {
     onSelectData: selectData,
+};
+
+MainView.propTypes = {
+  date: PropTypes.object,
+  explanation: PropTypes.string,
+  title: PropTypes.string,
+  img: PropTypes.string,
+  onSelectData: PropTypes.func,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainView);
