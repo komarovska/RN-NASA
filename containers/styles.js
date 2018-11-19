@@ -7,7 +7,6 @@ export default StyleSheet.create({
   },
   title: {
     paddingTop: 60,
-    paddingLeft: 20,
     fontSize: 22,
     fontWeight: "700",
     textAlign: "center",
